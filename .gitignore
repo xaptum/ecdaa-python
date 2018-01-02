@@ -1,0 +1,5 @@
+ecdaa/_extra_search_dir.py
+*.pyc
+build/
+dist/
+ecdaa_python.egg-info/
