@@ -2426,7 +2426,7 @@ def set_functions_from_library(extra_lib_paths):
 
     global ecdaa_tpm_context_init_socket
     ecdaa_tpm_context_init_socket = lib.ecdaa_tpm_context_init_socket
-    ecdaa_tpm_context_init_socket.argtypes = [POINTER(struct_ecdaa_tpm_context), POINTER(ECP_FP256BN), TPM_HANDLE, String, String, String, c_uint16]
+    ecdaa_tpm_context_init_socket.argtypes = [POINTER(struct_ecdaa_tpm_context), POINTER(c_uint8), TPM_HANDLE, String, String, String, c_uint16]
     ecdaa_tpm_context_init_socket.restype = c_int
 
     global ecdaa_tpm_context_free

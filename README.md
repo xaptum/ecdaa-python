@@ -2,7 +2,7 @@
 Python wrappers for the ECDAA project
 
 ## Requirements
-- ecdaa >= 0.5.0
+- ecdaa >= 0.6.0
 
 To use a local copy of `ecdaa` install at `ECDAA_DIR`, do the following before building/installing:
 ```
