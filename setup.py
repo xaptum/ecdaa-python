@@ -36,7 +36,7 @@ class AddLibraryPathCommand(distutils.cmd.Command):
 
 setup(
         name = 'ecdaa-python',
-        version = '0.5.0',
+        version = '0.6.0',
         description = 'Python wrapper for Xaptum TPM',
         author = 'Xaptum, Inc.',
         license = 'Apache 2.0',
