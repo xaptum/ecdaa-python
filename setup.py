@@ -36,7 +36,7 @@ class AddLibraryPathCommand(distutils.cmd.Command):
 
 setup(
         name = 'ecdaa-python',
-        version = '0.6.1',
+        version = '0.7.0',
         description = 'Python wrapper for Elliptic-curve Direct Anonymous Attestation',
         author = 'Xaptum, Inc.',
         author_email = 'sales@xaptum.com',
