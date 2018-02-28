@@ -1388,7 +1388,6 @@ class struct_ecdaa_tpm_context(Structure):
 struct_ecdaa_tpm_context.__slots__ = [
     'context_buffer',
     'sapi_context',
-    'public_key',
     'commit_counter',
     'key_handle',
     'key_authentication',
@@ -1402,7 +1401,6 @@ struct_ecdaa_tpm_context.__slots__ = [
 struct_ecdaa_tpm_context._fields_ = [
     ('context_buffer', c_uint8 * 5120),
     ('sapi_context', POINTER(TSS2_SYS_CONTEXT)),
-    ('public_key', ECP_FP256BN),
     ('commit_counter', c_uint16),
     ('key_handle', TPM_HANDLE),
     ('key_authentication', TPMS_AUTH_COMMAND),
@@ -2426,7 +2424,7 @@ def set_functions_from_library(extra_lib_paths):
 
     global ecdaa_tpm_context_init_socket
     ecdaa_tpm_context_init_socket = lib.ecdaa_tpm_context_init_socket
-    ecdaa_tpm_context_init_socket.argtypes = [POINTER(struct_ecdaa_tpm_context), POINTER(c_uint8), TPM_HANDLE, String, String, String, c_uint16]
+    ecdaa_tpm_context_init_socket.argtypes = [POINTER(struct_ecdaa_tpm_context), TPM_HANDLE, String, String, String, c_uint16]
     ecdaa_tpm_context_init_socket.restype = c_int
 
     global ecdaa_tpm_context_free
@@ -2436,7 +2434,7 @@ def set_functions_from_library(extra_lib_paths):
 
     global ecdaa_member_key_pair_TPM_generate
     ecdaa_member_key_pair_TPM_generate = lib.ecdaa_member_key_pair_TPM_generate
-    ecdaa_member_key_pair_TPM_generate.argtypes = [POINTER(struct_ecdaa_member_public_key_FP256BN), POINTER(c_uint8), c_uint32, POINTER(struct_ecdaa_tpm_context)]
+    ecdaa_member_key_pair_TPM_generate.argtypes = [POINTER(struct_ecdaa_member_public_key_FP256BN), POINTER(c_uint8), POINTER(c_uint8), c_uint32, POINTER(struct_ecdaa_tpm_context)]
     ecdaa_member_key_pair_TPM_generate.restype = c_int
 
     global get_csprng
